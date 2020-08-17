@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(version: 2020_08_17_185452) do
   end
 
   create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.integer "list_entry_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["list_entry_id"], name: "index_lists_on_list_entry_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -64,6 +69,7 @@ ActiveRecord::Schema.define(version: 2020_08_17_185452) do
 
   add_foreign_key "days", "meals"
   add_foreign_key "list_entries", "list_items"
+  add_foreign_key "lists", "list_entries"
   add_foreign_key "meals", "food_items"
   add_foreign_key "weeks", "days"
   add_foreign_key "weeks", "lists"
