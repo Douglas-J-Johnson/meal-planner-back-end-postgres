@@ -1,0 +1,2 @@
+class ListEntryListItemsController < ApplicationController
+end

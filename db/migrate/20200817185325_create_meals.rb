@@ -2,7 +2,7 @@ class CreateMeals < ActiveRecord::Migration[6.0]
   def change
     create_table :meals do |t|
       t.string :name
-      t.references :food_item, null: false, foreign_key: true
+      t.references :day, null: false, foreign_key: true
 
       t.timestamps
     end

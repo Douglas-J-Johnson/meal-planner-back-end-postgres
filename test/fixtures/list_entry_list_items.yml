@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list_entry: one
+  list_items: one
+
+two:
+  list_entry: two
+  list_items: two
