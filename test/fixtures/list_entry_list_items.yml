@@ -2,8 +2,8 @@
 
 one:
   list_entry: one
-  list_items: one
+  list_item: one
 
 two:
   list_entry: two
-  list_items: two
+  list_item: two

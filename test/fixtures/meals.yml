@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  food_item: one
+  day: one
 
 two:
   name: MyString
-  food_item: two
+  day: two

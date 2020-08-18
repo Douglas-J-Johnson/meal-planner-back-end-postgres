@@ -1,3 +1,3 @@
 class List < ApplicationRecord
-  belongs_to :list_entry
+  belongs_to :week
 end

@@ -1,3 +1,3 @@
 class Day < ApplicationRecord
-  belongs_to :meal
+  belongs_to :week
 end

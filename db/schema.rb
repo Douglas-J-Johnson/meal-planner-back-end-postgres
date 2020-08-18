@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_173249) do
+ActiveRecord::Schema.define(version: 2020_08_18_205431) do
 
   create_table "days", force: :cascade do |t|
-    t.string "date"
     t.string "week_day"
     t.integer "week_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -38,11 +37,11 @@ ActiveRecord::Schema.define(version: 2020_08_18_173249) do
 
   create_table "list_entry_list_items", force: :cascade do |t|
     t.integer "list_entry_id", null: false
-    t.integer "list_items_id", null: false
+    t.integer "list_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["list_entry_id"], name: "index_list_entry_list_items_on_list_entry_id"
-    t.index ["list_items_id"], name: "index_list_entry_list_items_on_list_items_id"
+    t.index ["list_item_id"], name: "index_list_entry_list_items_on_list_item_id"
   end
 
   create_table "list_items", force: :cascade do |t|
@@ -77,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_173249) do
   end
 
   create_table "weeks", force: :cascade do |t|
+    t.integer "week_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 2020_08_18_173249) do
   add_foreign_key "days", "weeks"
   add_foreign_key "list_entries", "lists"
   add_foreign_key "list_entry_list_items", "list_entries"
-  add_foreign_key "list_entry_list_items", "list_items", column: "list_items_id"
+  add_foreign_key "list_entry_list_items", "list_items"
   add_foreign_key "lists", "weeks"
   add_foreign_key "meal_food_items", "food_items"
   add_foreign_key "meal_food_items", "meals"

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  resources :list_entries
+  resources :lists
   resources :list_entry_list_items
-  resources :meal_food_items
+  resources :meals
+  resources :days
   resources :weeks
+  resources :meal_food_items
   # resources :days
   # resources :meals
   # resources :lists
