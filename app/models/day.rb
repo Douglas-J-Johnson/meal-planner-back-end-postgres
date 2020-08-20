@@ -1,3 +1,4 @@
 class Day < ApplicationRecord
-  belongs_to :week
+  belong_to :week
+  has_many :meals
 end
